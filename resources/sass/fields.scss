@@ -1,0 +1,40 @@
+@import "../../node_modules/codemirror/lib/codemirror.css";
+@import "../../node_modules/codemirror/theme/monokai.css";
+
+.key-value-item {
+    .form-input:active, .form-input:focus {
+        box-shadow: none;
+    }
+
+    .editor-wrapper {
+        max-width: 760px;
+
+        @media (max-width: 1440px) {
+            max-width: 550px;
+        }
+
+        @media (max-width: 990px) {
+            max-width: 300px;
+        }
+    }
+}
+
+.ql-editor {
+    min-height: 360px;
+}
+
+.jdlabs-code-editor {
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #22292f;
+    color: #fdfdfe;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.jdlabs-content-html {
+    border: 1px solid #e9e9e9;
+    border-radius: 3px;
+    max-height: 400px;
+    overflow-y: scroll;
+}

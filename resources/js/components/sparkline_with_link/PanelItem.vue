@@ -1,0 +1,50 @@
+<template>
+    <div class="flex border-b border-40">
+        <div class="w-1/4 py-4">
+            <slot>
+                <h4 class="font-normal text-80">{{ label }}</h4>
+            </slot>
+        </div>
+        <div class="w-3/4 py-4 break-words">
+            <slot name="value">
+                <sparkline-with-link-item-value :field="field"></sparkline-with-link-item-value>
+            </slot>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+            field: {
+                type: Object,
+                required: true,
+            },
+            fieldName: {
+                type: String,
+                default: '',
+            },
+        },
+        computed: {
+            label() {
+                return this.fieldName || this.field.name
+            },
+
+            fieldValue() {
+                if (
+                    this.field.value === '' ||
+                    this.field.value === null ||
+                    this.field.value === undefined
+                ) {
+                    return false
+                }
+
+                return String(this.field.value)
+            },
+
+            shouldDisplayAsHtml() {
+                return this.field.asHtml
+            },
+        },
+    }
+</script>
