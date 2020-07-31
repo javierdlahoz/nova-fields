@@ -1,13 +1,13 @@
 <template>
-    <template class="jdlabs-toggle-field">
-        <div class="flex items-center md:-mx-4">
-            <label class="switch relative inline-block w-16 h-10">
+    <template>
+        <div class="flex justify-center items-center md:-mx-4">
+            <label class="switch relative inline-block w-16 h-10" style="margin-left: 0">
                 <input type="checkbox"
                        @input="toggle"
                        :id="field.attribute"
                        :name="field.name"
                        :checked="checked"
-                       :disabled="isReadonly"
+                       :disabled="true"
                 >
                 <span class="slider cursor-pointer inset-0 absolute round rounded-full"></span>
             </label>

@@ -2,7 +2,7 @@
     <default-field :field="field" :errors="errors" :full-width-content="true">
         <template slot="field" class="jdlabs-toggle-field">
             <div class="flex items-center md:-mx-4">
-                <label class="switch relative inline-block w-16 h-10">
+                <label class="switch relative inline-block w-16 h-10" style="margin-left: 0">
                     <input type="checkbox"
                            @input="toggle"
                            :id="field.attribute"
