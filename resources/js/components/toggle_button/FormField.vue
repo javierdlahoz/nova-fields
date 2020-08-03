@@ -26,14 +26,14 @@ export default {
     mixins: [HandlesValidationErrors, FormField],
 
     data: () => ({
-        value: true,
+        value: false,
     }),
 
     mounted() {
-        this.value = this.field.value || true
+        this.value = this.field.value || false
 
         this.field.fill = formData => {
-            formData.append(this.field.attribute, this.trueValue)
+            formData.append(this.field.attribute, this.value ? 1 : 0)
         }
     },
 
