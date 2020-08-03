@@ -7,7 +7,7 @@
                        :id="field.attribute"
                        :name="field.name"
                        :checked="checked"
-                       :disabled="true"
+                       :disabled="isReadonly"
                 >
                 <span class="slider cursor-pointer inset-0 absolute round rounded-full"></span>
             </label>
@@ -25,11 +25,11 @@ export default {
     props: ['resourceName', 'field'],
 
     data: () => ({
-        value: true,
+        value: false,
     }),
 
     mounted() {
-        this.value = this.field.value || true
+        this.value = this.field.value || false
 
         this.field.fill = formData => {
             formData.append(this.field.attribute, this.trueValue)
